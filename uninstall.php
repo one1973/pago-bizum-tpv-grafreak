@@ -6,7 +6,7 @@
  * @link       http://www.grafreak.net
  * @since      1.0.0
  *
- * @package    Pago_Redsys_Grafreak
+ * @package    Pago_Bizum_Grafreak
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
