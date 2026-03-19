@@ -3,6 +3,12 @@ Customisation of Grafreak’s Redsys plugin for personal use, enabling payment v
 Many thanks to the plugin’s original author for their work, 
 I hope they don’t mind me making this crude modification (but it works XD)
 
+I’ve simply changed the plugin’s name so it can be installed alongside the original version, renamed the files, and added a line to call Redsys and include the correct parameter for paying via Bizum: 
+
+DS_MERCHANT_PAYMETHODS=z  
+
+I’ve also changed the icons to adapt them for Bizum payments
+
 === Pago por Bizum ===
 Contributors: grafreak, adriandegrafreak
 Donate link: http://www.grafreak.net
