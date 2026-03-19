@@ -1,7 +1,12 @@
-=== Pago por Redsys ===
+Customisation of Grafreak’s Redsys plugin for personal use, enabling payment via Bizum.
+
+Many thanks to the plugin’s original author for their work, 
+I hope they don’t mind me making this crude modification (but it works XD)
+
+=== Pago por Bizum ===
 Contributors: grafreak, adriandegrafreak
 Donate link: http://www.grafreak.net
-Tags: tpv, ecommerce, redsys
+Tags: tpv, ecommerce, redsys, bizum
 Requires at least: 5.4
 Tested up to: 6.7.2
 Stable tag: trunk
@@ -24,9 +29,9 @@ These are the steps you must do to install in plugin
 
 1. Upload the plugin to Wordpress (or via FTP to `/ wp-content / plugins /` or through the admin interface)
 2. Activate the plugin through the WordPress 'Plugins' menu
-3. Configure your POS data in Settings> POS Configuration
+3. Configure your POS data in Settings> POS Bizum Conf
 4. Place the following shortcodes on the page you want:
-[pago_tpv]Text of the POS form[/pago_tpv]
+[pago_tpv_bizum]Text of the POS form[/pago_tpv_bizum]
 5. You can now send your users to that page to make the payment.
 
 == Frequently Asked Questions ==
@@ -45,10 +50,13 @@ No. It is a payment gateway, simply the plugin forwards the merchant's informati
 
 = Can I pre-fill the fields so that the user only has to make the payment? =
 
-Yes. The fields search for $ _GET for the values ​​'np' and 'c'.
+Yes. The fields search for $ _GET for the values ​​'np', 'c' and 'desc'.
 'np': 'Order number'
 'c': 'Amount to pay'
-Therefore doing /? Np = 123 & c = 1 we would have the fields "Order number" with "123" and the "Amount to pay" with "1"
+'desc': 'Description'
+Therefore doing /?np=123123&c=1&desc=test we would have the fields "Order number" with "123123", the "Amount to pay" with "1" and "Description" with "test"
+
+URL example https://yourdomain.com/pos-bizum/?np=123123&c=1&desc=test
 
 = The order number always adds 3 values ​​to me before, can I avoid it? =
 
@@ -56,15 +64,7 @@ No. This is because the bank can only process each order if the order number is 
 
 = How to redirect user before correct and wrong payment? =
 
-Each [pago_tpv] can have an url_ko and url_ok attrbute. Also on global configuration can put a url_ko or url_ok for all the return. If you don't specify, it will return to the same page. It is advisable put and url_ok on shortcode or in config.
-
-== Screenshots ==
-
-1. Corresponds screenshot-1.jpg. This is how the contact form is displayed. The title takes it from the h2 styles and the user fills in, if the pre-filled url has not been passed (see the FAQ).
-
-2. Corresponds screenshot-2.jpg. We send the user to the Redsys gateway with the order number and the amount to pay.
-
-3. Corresponds screenshot-3.jpg. When the payment has been made satisfactorily, the user returns to our page with the order information and the message that we have written.
+Each [pago_tpv_bizum] can have an url_ko and url_ok attrbute. Also on global configuration can put a url_ko or url_ok for all the return. If you don't specify, it will return to the same page. It is advisable put and url_ok on shortcode or in config.
 
 == Changelog ==
 
