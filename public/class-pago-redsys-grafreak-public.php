@@ -146,10 +146,10 @@ class Pago_Redsys_Grafreak_Public {
 		$mi_obj->set_parameter( 'DS_MERCHANT_URLKO', $url_ko );
 		$mi_obj->set_parameter( 'DS_MERCHANT_MERCHANTNAME', get_option( $this->option_name . '_nombrecomercio' ) );
 		$mi_obj->set_parameter( 'DS_MERCHANT_PRODUCTDESCRIPTION', $desc );
-
-		if ( isset( $_REQUEST['bizum'] ) ) {
-			$mi_obj->set_parameter( 'DS_MERCHANT_PAYMETHODS', 'z' );
-		}
+		
+		// BIZUM
+		$mi_obj->set_parameter( 'DS_MERCHANT_PAYMETHODS', 'z' );	
+		// BIZUM
 		
 		if ( ! empty( $lang_tpv ) ) {
 			$mi_obj->set_parameter( 'DS_MERCHANT_CONSUMERLANGUAGE', $lang_tpv );
